@@ -93,7 +93,7 @@ Pinteresting::Application.configure do
   domain: ENV["gmail.com"],
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV["abester101@gmail.com"],
+  user_name: ENV["abestoreyenterprises@gmail.com"],
   password: ENV["12345@Bc"]
 }
 end

@@ -79,13 +79,10 @@ Pinteresting::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # for actual host
-  config.action_mailer.default_url_options = { :host => 'omr-pinterest1.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://omr-pinterest1.herokuapp.com' }
 
   #mailing
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.delivery_method = :smtp 
 
   config.action_mailer.smtp_settings = {
   address: "smtp.gmail.com",
@@ -93,7 +90,8 @@ Pinteresting::Application.configure do
   domain: ENV["gmail.com"],
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV["abestoreyenterprises@gmail.com"],
+  user_name: ENV["abester101"],
   password: ENV["12345@Bc"]
 }
+
 end

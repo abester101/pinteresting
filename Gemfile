@@ -34,6 +34,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+     gem 'sqlite3'
+end
+
+group :production do
+     gem 'pg'
+     gem 'rails_12factor'
+end
 
 
 # Use ActiveModel has_secure_password

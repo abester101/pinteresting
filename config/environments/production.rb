@@ -81,17 +81,6 @@ Pinteresting::Application.configure do
   # for actual host
   config.action_mailer.default_url_options = { :host => 'http://omr-pinterest1.herokuapp.com' }
 
-  #mailing
-  config.action_mailer.delivery_method = :smtp 
 
-  config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: ENV["gmail.com"],
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["abester101@gmail.com"],
-  password: ENV["12345@Bc"]
-}
 
 end

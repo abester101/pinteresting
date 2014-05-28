@@ -29,7 +29,7 @@ class PinnersController < ApplicationController
   end
 
   def update
-    if @pinner.update(pin_params)
+    if @pinner.update(pinner_params)
       redirect_to @pinner, notice: 'Pinner was successfully updated.'
     else
       render action: 'edit'

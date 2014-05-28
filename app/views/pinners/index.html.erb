@@ -1,0 +1,31 @@
+<h1>Listing pinners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pinners.each do |pinner| %>
+      <tr>
+        <td><%= pinner.description %></td>
+        <td><%= pinner.user.email if pinner.user %></td>
+        <td><%= link_to 'Show', pinner %></td>
+       <% if pinner.user == current_user %> 
+        <td><%= link_to 'Edit', edit_pinner_path(pinner) %></td>
+        <td><%= link_to 'Destroy', pinner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Pinner', new_pinner_path %>
+<% end %>

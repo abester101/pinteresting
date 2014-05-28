@@ -1,0 +1,2 @@
+module PinnersHelper
+end

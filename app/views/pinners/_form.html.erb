@@ -1,0 +1,21 @@
+<%= form_for(@pinner) do |f| %>
+  <% if @pinner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pinner.errors.count, "error") %> prohibited this pinner from being saved:</h2>
+
+      <ul>
+      <% @pinner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

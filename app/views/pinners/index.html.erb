@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Description</th>
       <th>User</th>
       <th></th>
@@ -13,9 +14,10 @@
   <tbody>
     <% @pinners.each do |pinner| %>
       <tr>
+        <td><%= image_tag pinner.image.url(:medium) %></td>
         <td><%= pinner.description %></td>
         <td><%= pinner.user.email if pinner.user %></td>
-        <td><%= link_to 'Show', pinner %></td>
+        <td><%= link_to 'Show', pinner_path(pinner) %></td>
        <% if pinner.user == current_user %> 
         <td><%= link_to 'Edit', edit_pinner_path(pinner) %></td>
         <td><%= link_to 'Destroy', pinner, method: :delete, data: { confirm: 'Are you sure?' } %></td>

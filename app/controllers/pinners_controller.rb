@@ -59,3 +59,8 @@ class PinnersController < ApplicationController
       params.require(:pinner).permit(:description)
     end
 end
+
+def pinner_params
+      params.require(:pinner).permit(:description, :image)
+
+end

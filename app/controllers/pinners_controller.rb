@@ -56,11 +56,7 @@ class PinnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pinner_params
-      params.require(:pinner).permit(:description)
+      params.require(:pinner).permit(:description,:image)
     end
 end
 
-def pinner_params
-      params.require(:pinner).permit(:description, :image)
-
-end

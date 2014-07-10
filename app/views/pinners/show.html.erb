@@ -1,8 +1,21 @@
-<%= image_tag @pinner.image.url (:medium) %>
-<p>
-  <strong>Description:</strong>
-  <%= @pinner.description %>
-</p>
-
 <%= link_to 'Edit', edit_pinner_path(@pinner) %> |
 <%= link_to 'Back', pinners_path %>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading center">
+				<%= image_tag @pinner.image.url (:medium) %>
+			</div>
+<div class="panel-body">
+  <strong>Description:</strong>
+  <%= @pinner.description %>
+  <p><strong><%= @pinner.user.email if @pinner.user %></strong></p>
+
+  <% if @pinner.user == current_user %>
+         <%= link_to 'Edit', edit_pinner_path(@pinner) %>
+        <% end %>
+
+			<div>
+		</div>
+	</div>
+</div>
